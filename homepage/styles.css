@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* so that it stays inside the container element if we do changes to an element's padding,border thickness...*/
+    scroll-behavior: smooth; /*so that scrolling is smooth as easy as that xD*/
+
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    /*height: 80px;*/
+    position: fixed;
+    z-index: 999; /*a high value makes it always in the front ,never gets covered*/
+    display: flex;
+    justify-content: space-between; /* makes a space between child elements , in this case anker link of logo and nav */
+    align-items: center;/* align items in center vertically */
+    padding: 10px 200px; /* the first value is top and bottom and the second is right and left */
+
+}
+
+.logo {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8em; /* size is relative to the default pixel size of the browser */
+
+}
+
+
+.navigation a {
+    text-decoration: none;
+    color: rgb(19, 18, 18);
+    font-weight: 500;
+    font-size: 1.1em; /* siwe is relative to the default pixel size of the browser */
+    padding-left: 30px;
+}
+
+.navigation a:hover {
+    color: rgb(72, 218, 210);
+}
+
+section {
+    padding: 100px 200px;
+    /*justify-content: space-between;*/
+}
+
+.main  {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: url(images/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.main .social-icons a img{
+    width: 25.5px;
+
+}
+
+/*#Bassem-img {
+    width: 35%;
+    height: 95%;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+}*/
+
+.main h2 {
+    color: rgb(180, 178, 178);
+    font-size: 1.4em;
+    font-weight: 600;
+    padding-bottom: 2em;
+}
+
+.main h2 span {
+    display: inline-block;
+    margin-top: 10px;
+    color:rgb(40, 16, 175);
+    font-size: 3em;
+    font-weight: 800;
+}
+
+.main h3 {
+    font-size: 2em;
+    font-weight: 750;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: rgb(10, 17, 58);
+}
+
+.main-btn {
+    color: white;
+    background-color: rgb(57, 57, 199);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 1px;
+    border-radius: 15px; /*makes the curves of the corners */
+    margin-bottom: 40px;
+    transition: 0.7s ease; /*makes the animation smooth and takes 0.7s to happen */
+}
+
+.main-btn:hover {
+    background-color: rgb(9, 9, 212);
+    color: rgb(180, 174, 174);
+    transform: scale(1.07);
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.7em;
+    padding-right: 30px;
+
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: rgb(22, 49, 202);
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap; /*when u minimize the window it keeps the same size */
+}
+
+.card {
+    background-color: white;
+    width: 21.25em;
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.30); /* first parameter top or bottom , second to left or to right ,third intensity of blur, last is color of shadow */
+    padding: 25px;
+    margin: 15px;
+    border-radius: 15px;
+    transition: 0.7s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+
+.card .icon {
+    color: rgb(32, 32, 240);
+    font-size: 8em;
+    text-align: center;
+}
+
+.info {
+    text-align: center;
+}
+
+.info h3 {
+    color: rgb(32, 32, 240);
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.projects {
+    /*background-color: rgb(7, 30, 66);*/
+    background-image: linear-gradient(black,rgb(6, 6, 109));
+}
+
+.projects .content {
+    margin-top: 30px;
+
+}
+
+.project-card {
+    border: 3px solid white;
+    min-height: 14em;
+    width: 23em;
+    overflow: hidden; /*when they overflow they won't go out of card */
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.7s ease;
+    background-color: white;
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.30);
+
+}
+
+.project-card:hover {
+    transform: scale(1.1);
+}
+
+.project-card:hover .project-image {
+    opacity: 0.6;
+}
+
+.project-image img{
+    width: 100%;
+    max-height: 180px;
+}
+
+.project-info {
+    padding: 1em;
+}
+
+.project-category {
+    font-size: 0.8em;
+}
+
+.project-title {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.more-details {
+    text-decoration: none;
+    color: #1b93e4;
+}
+
+.more-details:hover {
+    color: #601cfc;
+}
+
+/*.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact .container img {
+    width: 29%;
+    border: 3px solid rgb(53, 52, 52);
+}*/
+
+.contact {
+    background-color: white;
+    /*good color rgb(245, 179, 156)*/
+}
+.contact {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 100%;
+    border-radius: 10px;
+}
+
+form h1 {
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #352c5a;
+    text-align: center;
+}
+
+form input, form textarea {
+    border: 2px solid rgb(12, 10, 46);
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    background: transparent;
+    font-size: 16px;
+    color: rgb(128, 126, 126);
+}
+
+form button {
+    padding: 1em 0;
+    background: #4137ce;
+    color: white;
+    font-size: 1em;
+    font-weight: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 10em;
+    margin: 10px auto;
+    border-radius: 30px;
+}
+
+.input-group {
+    margin-bottom: 35px;
+    position: relative;
+}
+
+form label {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: rgb(32, 32, 32);
+    cursor: text;
+    transition: 0.2s;
+}
+
+input:focus~label,
+input:not(:placeholder-shown)~label,
+textarea:focus~label,
+textarea:valid~label {
+    top: -35px;
+    font-size: 12px;
+}
+
+.footer {
+    background-color: rgb(6, 7, 53);
+    color: white;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-title {
+    font-size: 1.05em;
+    font-weight: 600;
+}
+
+.footer-title span {
+    color: rgb(99, 99, 99);
+}
+
+.footer .social-icons {
+    font-size: 0.5em;
+    padding: 0 12px 0 0;
+}
+
+.footer .social-icons img {
+    width: 14px;
+}
+
+
+@media (max-width:1280px){
+    body{
+        font-size: 14px;
+    }
+}
+@media (max-width:1024px){
+    header{
+        padding: 12px 20px;
+    }
+    .navigation a{
+        padding-left: 10px;
+    }
+    .title{
+        font-size: 1.5em;
+    }
+    section{
+        padding: 80px 20px;
+    }
+    .main h2{
+        font-size: 1em;
+    }
+    .main h3{
+        font-size: 1.4em;
+    }
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width:641px){
+    body{
+        font-size: 12px;
+    }
+    .maim h2{
+        font-size: 0.8em;
+    }
+    .main h3{
+        font-size: 1.4em;
+    }
+}
+
+@media(max-width:360px){
+    body{
+        font-size: 12px;
+    }
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card{
+        width: 22em;
+        margin: 0.8em;
+    }
+}
+
+@media(max-width:300px){
+    body{
+        font-size: 10px;
+    }
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card{
+        width: 20em;
+        margin: 1.8em;
+    }
+}
