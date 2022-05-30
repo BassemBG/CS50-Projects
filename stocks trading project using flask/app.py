@@ -242,3 +242,52 @@ def sell():
         options = db.execute("SELECT * FROM users_stocks WHERE user_id = ? ORDER BY shares DESC",
         session["user_id"])
         return render_template("sell.html",options=options)
+
+
+@app.route("/change_password", methods=["GET", "POST"])
+@login_required
+def change_password():
+    if request.method == "POST":
+        #get input values
+        New_Password = request.form.get("New-password")
+        Old_Password = request.form.get("old-password")
+        Confirmation = request.form.get("confirmation")
+        user_id = session["user_id"]
+
+        #get old password from database
+        db_old_password = db.execute("SELECT hash FROM users WHERE id = ? ",user_id)[0]["hash"]
+
+        #check errors
+        if not New_Password or not Old_Password or not Confirmation :
+            return apology("Must fill in all the inputs!")
+        if not check_password_hash(db_old_password, Old_Password) :
+            return apology("Old Password is incorrect!")
+        if New_Password != Confirmation :
+            return apology("Confirmation error!")
+
+        #change password in database
+        db.execute("UPDATE users SET hash=? WHERE id = ?",generate_password_hash(New_Password),user_id)
+
+        return redirect("/")
+    else :
+        return render_template("change_password.html")
+
+
+@app.route("/cash", methods=["GET", "POST"])
+@login_required
+def cash():
+    user_id = session["user_id"]
+    if request.method == "POST":
+        #get cash to add
+        cash = request.form.get("cash")
+
+        #check errors
+        if not cash:
+            return apology("please insert some cash to add")
+
+        #update cash in database
+        db.execute("UPDATE users SET cash = cash + ? WHERE id = ?",cash,user_id)
+
+        return redirect("/")
+    else:
+        return render_template("cash.html")
